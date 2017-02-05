@@ -1,5 +1,5 @@
 TODAY = $(shell date +%Y-%m-%d)
-PREFIX = "puszczyk"
+PREFIX = "ikupczynski"
 IMAGE = "$(PREFIX)/blog-builder:$(TODAY)"
 
 .PHONY: help
@@ -11,5 +11,6 @@ help:
 build:
 	@ docker build -t "$(IMAGE)" .
 
+.PHONY: push
 push: build
 	@ docker push "$(IMAGE)"
