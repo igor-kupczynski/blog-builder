@@ -1,11 +1,12 @@
-FROM ubuntu:yakkety-20170104
+FROM ubuntu:impish
 MAINTAINER Igor Kupczyński
 
 # Required packages
 # Jekyll downloads half of the internet and more 
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -qq -y curl hugo jekyll && \
+    apt-get install -y curl hugo jekyll python-is-python3 python3-venv && \
     apt-get clean
 
 # AWS cli
