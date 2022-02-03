@@ -6,7 +6,15 @@ MAINTAINER Igor Kupczyński
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y curl hugo jekyll python-is-python3 python3-venv && \
+    apt-get install -y \
+        build-essential \
+        curl \
+        hugo \
+        jekyll \
+        make \
+        python-is-python3 python3-venv \
+        ruby-dev \
+        vim && \
     apt-get clean
 
 # AWS cli
